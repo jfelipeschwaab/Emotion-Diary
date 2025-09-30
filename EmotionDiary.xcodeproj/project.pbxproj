@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8EC631442E8C4AA300822AB2 /* EmotionClassification in Frameworks */ = {isa = PBXBuildFile; productRef = 8EC631432E8C4AA300822AB2 /* EmotionClassification */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8EC631342E8C4A8000822AB2 /* EmotionDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC631442E8C4AA300822AB2 /* EmotionClassification in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = EmotionDiary;
 			packageProductDependencies = (
+				8EC631432E8C4AA300822AB2 /* EmotionClassification */,
 			);
 			productName = EmotionDiary;
 			productReference = 8EC631342E8C4A8000822AB2 /* EmotionDiary.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 8EC6312B2E8C4A8000822AB2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8EC631422E8C4AA300822AB2 /* XCRemoteSwiftPackageReference "emotion-classification" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8EC631352E8C4A8000822AB2 /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8EC631422E8C4AA300822AB2 /* XCRemoteSwiftPackageReference "emotion-classification" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jfelipeschwaab/emotion-classification";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8EC631432E8C4AA300822AB2 /* EmotionClassification */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EC631422E8C4AA300822AB2 /* XCRemoteSwiftPackageReference "emotion-classification" */;
+			productName = EmotionClassification;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8EC6312C2E8C4A8000822AB2 /* Project object */;
 }

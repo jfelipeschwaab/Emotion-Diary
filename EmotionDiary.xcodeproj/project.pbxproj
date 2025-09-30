@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8EC631442E8C4AA300822AB2 /* EmotionClassification in Frameworks */ = {isa = PBXBuildFile; productRef = 8EC631432E8C4AA300822AB2 /* EmotionClassification */; };
+		8EC631592E8C4ED000822AB2 /* HumanSpeech in Frameworks */ = {isa = PBXBuildFile; productRef = 8EC631582E8C4ED000822AB2 /* HumanSpeech */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC631592E8C4ED000822AB2 /* HumanSpeech in Frameworks */,
 				8EC631442E8C4AA300822AB2 /* EmotionClassification in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +73,7 @@
 			name = EmotionDiary;
 			packageProductDependencies = (
 				8EC631432E8C4AA300822AB2 /* EmotionClassification */,
+				8EC631582E8C4ED000822AB2 /* HumanSpeech */,
 			);
 			productName = EmotionDiary;
 			productReference = 8EC631342E8C4A8000822AB2 /* EmotionDiary.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				8EC631422E8C4AA300822AB2 /* XCRemoteSwiftPackageReference "emotion-classification" */,
+				8EC631572E8C4ED000822AB2 /* XCRemoteSwiftPackageReference "HumanSpeech" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8EC631352E8C4A8000822AB2 /* Products */;
@@ -343,6 +347,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		8EC631572E8C4ED000822AB2 /* XCRemoteSwiftPackageReference "HumanSpeech" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daniellealpimenta/HumanSpeech.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -350,6 +362,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8EC631422E8C4AA300822AB2 /* XCRemoteSwiftPackageReference "emotion-classification" */;
 			productName = EmotionClassification;
+		};
+		8EC631582E8C4ED000822AB2 /* HumanSpeech */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EC631572E8C4ED000822AB2 /* XCRemoteSwiftPackageReference "HumanSpeech" */;
+			productName = HumanSpeech;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

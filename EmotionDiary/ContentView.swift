@@ -8,21 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isPresented: Bool = false
     var body: some View {
         NavigationStack{
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
-            }
-            .padding()
-            .navigationTitle(Text("Diário"))
-            .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(systemName: "plus")
+                
+                List{
+                    Section{
+                        
+                        Text ("Meu Aniversário")
+                        
                     }
                 }
+            }
+            .navigationTitle(Text("Diário"))
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button{
+                        isPresented =  true
+                    } label: {
+                        Image(systemName: "plus")
+                            .foregroundStyle(.purple)
+                    }
+                    
+                    
+                    
+                    
+                }
+            }
+            
+            .searchable(text: .constant(""))
+            
+            .sheet(isPresented: $isPresented ){
+                RecordingView()
+                    .presentationDetents([.fraction(0.2)])
+            }
+            
         }
     }
 }

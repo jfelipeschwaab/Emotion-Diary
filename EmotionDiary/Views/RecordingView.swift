@@ -6,10 +6,13 @@
 //
 import SwiftUI
 import HumanSpeech
+import EmotionClassification
 
 struct RecordingView: View {
     @State var isRecording = false
     @StateObject private var speechRecognizer = SpeechRecognizer()
+    @StateObject var audioVM = AudioViewModel()
+
     
     var onFinishRecording: ((String) -> Void)?
 
@@ -21,10 +24,13 @@ struct RecordingView: View {
                 Button{
                     toggleRecording()
                 } label: {
+                    Text(audioVM.detectedSound)
+                    Text(audioVM.mostFrequentSoundInSession)
                     if(isRecording) {
                         Image(systemName: "stop.circle.fill")
                             .foregroundStyle(.purple)
                             .font(.system(size: 70))
+
                     } else {
                         Image(systemName: "microphone.circle.fill")
                             .foregroundStyle(.purple)
@@ -43,9 +49,11 @@ struct RecordingView: View {
         
         if isRecording {
             speechRecognizer.startTranscribing()
+            audioVM.startAnalysis()
         } else {
             speechRecognizer.stopTranscribing()
-            
+            audioVM.stopAnalysis()
+            print(audioVM.mostFrequentSoundInSession)
             onFinishRecording?(speechRecognizer.transcript)
         }
     }

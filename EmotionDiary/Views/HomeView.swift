@@ -10,6 +10,9 @@ import SwiftUI
 struct HomeView: View {
     @State var registers: [Register] = mockRegisters
     @State var isPresented: Bool = false
+    @State var showSaveAlert: Bool = false
+    @State var tempTranscript: String? = nil
+    @State var selectedRegister: Register? = nil
     
     var body: some View {
         NavigationStack{
@@ -51,10 +54,35 @@ struct HomeView: View {
             }
             .searchable(text: .constant(""))
             .sheet(isPresented: $isPresented ){
-                RecordingView()
-                    .presentationDetents([.fraction(0.2)])
+                RecordingView { transcript in
+                    tempTranscript = transcript
+                    showSaveAlert = true
+                }
+                .presentationDetents([.fraction(0.2)])
             }
-            
+            .alert("Salvar relato?", isPresented: $showSaveAlert) {
+                Button("Descartar", role: .cancel) {
+                    tempTranscript = nil
+                    isPresented = false
+                }
+                Button("Salvar") {
+                    if let text = tempTranscript {
+                        let novoRegistro = Register(content: text)
+                        registers.append(novoRegistro)
+                        selectedRegister = novoRegistro
+                    }
+                    tempTranscript = nil
+                    isPresented = false
+                }
+            } message: {
+                if let text = tempTranscript {
+                    Text("\"\(text.prefix(80))...\"")
+                }
+            }
+
+            .navigationDestination(item: $selectedRegister) { register in
+                RegisterView(register: register)
+            }
         }
     }
     

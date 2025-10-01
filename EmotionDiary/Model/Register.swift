@@ -7,14 +7,14 @@
 
 import Foundation
 
-class Register: Identifiable {
+struct Register: Identifiable, Hashable {
     
     var id: UUID
     var title: String
     var createdAt: Date
-    var content: [Word]
+    var content: String
     
-    init(title: String = "", content: [Word]) {
+    init(title: String = "", content: String) {
         self.id = UUID()
         self.title = title
         self.createdAt = Date()

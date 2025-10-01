@@ -15,9 +15,22 @@
 		8EC631342E8C4A8000822AB2 /* EmotionDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8EC631812E8D9E0000822AB2 /* Exceptions for "EmotionDiary" folder in "EmotionDiary" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8EC631332E8C4A8000822AB2 /* EmotionDiary */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8EC631362E8C4A8000822AB2 /* EmotionDiary */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8EC631812E8D9E0000822AB2 /* Exceptions for "EmotionDiary" folder in "EmotionDiary" target */,
+			);
 			path = EmotionDiary;
 			sourceTree = "<group>";
 		};
@@ -266,9 +279,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CV45F6ZWHT;
+				DEVELOPMENT_TEAM = Q7JQ2Q58W8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EmotionDiary/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos acessar o microfone para analisar suas emoções";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Precisamos utilizar o speech para transcrever o seu áudio";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -295,9 +311,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CV45F6ZWHT;
+				DEVELOPMENT_TEAM = Q7JQ2Q58W8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EmotionDiary/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos acessar o microfone para analisar suas emoções";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Precisamos utilizar o speech para transcrever o seu áudio";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

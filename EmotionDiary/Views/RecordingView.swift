@@ -5,29 +5,26 @@
 //  Created by Nicole Dias on 30/09/25.
 //
 import SwiftUI
+import HumanSpeech
 
 struct RecordingView: View {
     @State var isRecording = false
+    @StateObject private var speechRecognizer = SpeechRecognizer()
+    
+    var onFinishRecording: ((String) -> Void)?
+
+    
+
     var body: some View {
         NavigationView{
             VStack {
-                
                 Button{
-                    isRecording = true
+                    toggleRecording()
                 } label: {
                     if(isRecording) {
-                        HStack{
-                            Button {
-                                isRecording = false
-                            } label: {
-                       
-                                Image(systemName: "stop.circle.fill")
-                                    .foregroundStyle(.purple)
-                                    .font(.system(size: 70))
-                            }
-                           
-                   
-                        }
+                        Image(systemName: "stop.circle.fill")
+                            .foregroundStyle(.purple)
+                            .font(.system(size: 70))
                     } else {
                         Image(systemName: "microphone.circle.fill")
                             .foregroundStyle(.purple)
@@ -35,11 +32,27 @@ struct RecordingView: View {
                     }
                     
                 }
-                
             }
             .navigationTitle(Text("Grave seu relato"))
             .navigationBarTitleDisplayMode(.inline)
         }
+    }
+    
+    private func toggleRecording() {
+        isRecording.toggle()
+        
+        if isRecording {
+            speechRecognizer.startTranscribing()
+        } else {
+            speechRecognizer.stopTranscribing()
+            
+            onFinishRecording?(speechRecognizer.transcript)
+        }
+    }
+    
+    func reset() {
+        speechRecognizer.resetTranscript()
+        isRecording = false
     }
 }
 

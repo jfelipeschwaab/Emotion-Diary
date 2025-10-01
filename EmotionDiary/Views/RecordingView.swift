@@ -14,7 +14,7 @@ struct RecordingView: View {
     @StateObject var audioVM = AudioViewModel()
 
     
-    var onFinishRecording: ((String) -> Void)?
+    var onFinishRecording: ((String, String) -> Void)?
 
     
 
@@ -25,7 +25,6 @@ struct RecordingView: View {
                     toggleRecording()
                 } label: {
                     Text(audioVM.detectedSound)
-                    Text(audioVM.mostFrequentSoundInSession)
                     if(isRecording) {
                         Image(systemName: "stop.circle.fill")
                             .foregroundStyle(.purple)
@@ -53,8 +52,7 @@ struct RecordingView: View {
         } else {
             speechRecognizer.stopTranscribing()
             audioVM.stopAnalysis()
-            print(audioVM.mostFrequentSoundInSession)
-            onFinishRecording?(speechRecognizer.transcript)
+            onFinishRecording?(speechRecognizer.transcript, audioVM.mostFrequentSoundInSession)
         }
     }
     

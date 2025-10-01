@@ -9,19 +9,26 @@
 var mockRegisters: [Register] = [
     Register(
         title: "Registro feliz",
-        content: " "
+        content: " ",
+        frequentEmotion: "Feliz"
     ),
     Register(
         title: "Registro triste",
-        content: " "
+        content: " ",
+        frequentEmotion: "Feliz"
+
     ),
     Register(
         title: "Registro de raiva",
-        content: " "
+        content: " ",
+        frequentEmotion: "Feliz"
+
     ),
     Register(
         title: "Registro neutro",
-        content: " "
+        content: " ",
+        frequentEmotion: "Feliz"
+
     )
 ]
 

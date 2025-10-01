@@ -13,11 +13,13 @@ struct Register: Identifiable, Hashable {
     var title: String
     var createdAt: Date
     var content: String
+    var frequentEmotion: String
     
-    init(title: String = "", content: String) {
+    init(title: String = "Novo registro", content: String, frequentEmotion: String) {
         self.id = UUID()
         self.title = title
         self.createdAt = Date()
         self.content = content
+        self.frequentEmotion = frequentEmotion
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8EC631592E8C4ED000822AB2 /* HumanSpeech in Frameworks */ = {isa = PBXBuildFile; productRef = 8EC631582E8C4ED000822AB2 /* HumanSpeech */; };
-		8ECF910A2E8DBF6D00FD5965 /* EmotionClassification in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECF91092E8DBF6D00FD5965 /* EmotionClassification */; };
+		8ECF91132E8DCA4E00FD5965 /* EmotionClassification in Frameworks */ = {isa = PBXBuildFile; productRef = 8ECF91122E8DCA4E00FD5965 /* EmotionClassification */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ECF910A2E8DBF6D00FD5965 /* EmotionClassification in Frameworks */,
+				8ECF91132E8DCA4E00FD5965 /* EmotionClassification in Frameworks */,
 				8EC631592E8C4ED000822AB2 /* HumanSpeech in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +86,7 @@
 			name = EmotionDiary;
 			packageProductDependencies = (
 				8EC631582E8C4ED000822AB2 /* HumanSpeech */,
-				8ECF91092E8DBF6D00FD5965 /* EmotionClassification */,
+				8ECF91122E8DCA4E00FD5965 /* EmotionClassification */,
 			);
 			productName = EmotionDiary;
 			productReference = 8EC631342E8C4A8000822AB2 /* EmotionDiary.app */;
@@ -118,7 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				8EC631572E8C4ED000822AB2 /* XCRemoteSwiftPackageReference "HumanSpeech" */,
-				8ECF91082E8DBF6D00FD5965 /* XCRemoteSwiftPackageReference "emotion-classification" */,
+				8ECF91112E8DCA4E00FD5965 /* XCRemoteSwiftPackageReference "emotion-classification" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8EC631352E8C4A8000822AB2 /* Products */;
@@ -368,12 +368,12 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		8ECF91082E8DBF6D00FD5965 /* XCRemoteSwiftPackageReference "emotion-classification" */ = {
+		8ECF91112E8DCA4E00FD5965 /* XCRemoteSwiftPackageReference "emotion-classification" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jfelipeschwaab/emotion-classification";
 			requirement = {
 				kind = revision;
-				revision = ab051b5867411d64806b377eda7fd98ec12c216d;
+				revision = f979d1d5d4638d46d474ac2b3c3c54108f2227f1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -384,9 +384,9 @@
 			package = 8EC631572E8C4ED000822AB2 /* XCRemoteSwiftPackageReference "HumanSpeech" */;
 			productName = HumanSpeech;
 		};
-		8ECF91092E8DBF6D00FD5965 /* EmotionClassification */ = {
+		8ECF91122E8DCA4E00FD5965 /* EmotionClassification */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8ECF91082E8DBF6D00FD5965 /* XCRemoteSwiftPackageReference "emotion-classification" */;
+			package = 8ECF91112E8DCA4E00FD5965 /* XCRemoteSwiftPackageReference "emotion-classification" */;
 			productName = EmotionClassification;
 		};
 /* End XCSwiftPackageProductDependency section */

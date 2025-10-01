@@ -13,6 +13,7 @@ struct HomeView: View {
     @State var showSaveAlert: Bool = false
     @State var tempTranscript: String? = nil
     @State var selectedRegister: Register? = nil
+    @State var tempFrequentEmotion: String? = nil
     
     var body: some View {
         NavigationStack{
@@ -54,8 +55,9 @@ struct HomeView: View {
             }
             .searchable(text: .constant(""))
             .sheet(isPresented: $isPresented ){
-                RecordingView { transcript in
+                RecordingView { transcript, mostFrequentEmotion in
                     tempTranscript = transcript
+                    tempFrequentEmotion = mostFrequentEmotion
                     showSaveAlert = true
                 }
                 .presentationDetents([.fraction(0.2)])
@@ -67,11 +69,12 @@ struct HomeView: View {
                 }
                 Button("Salvar") {
                     if let text = tempTranscript {
-                        let novoRegistro = Register(content: text)
+                        let novoRegistro = Register(content: text, frequentEmotion: tempFrequentEmotion!)
                         registers.append(novoRegistro)
                         selectedRegister = novoRegistro
                     }
                     tempTranscript = nil
+                    tempFrequentEmotion = nil
                     isPresented = false
                 }
             } message: {

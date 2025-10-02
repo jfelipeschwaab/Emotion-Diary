@@ -24,7 +24,6 @@ struct RecordingView: View {
                 Button{
                     toggleRecording()
                 } label: {
-                    Text(audioVM.detectedSound)
                     if(isRecording) {
                         Image(systemName: "stop.circle.fill")
                             .foregroundStyle(.purple)

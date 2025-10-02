@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
-    let register: Register
+    @Binding var register: Register
     
     private var emotionDetails: (color: Color, name: String) {
         let emotionName = register.frequentEmotion
@@ -28,27 +28,35 @@ struct RegisterView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack{
-                Text("Sua emoção predominante foi: ")
-                    .font(.title3)
-                Text(emotionDetails.name)
-                    .font(.title3)
-                    .foregroundStyle(emotionDetails.color)
+        VStack(spacing: 32) {
+            VStack(spacing: 2) {
+                TextField("", text: $register.title)
+                               .font(.title.bold())
+                               .textFieldStyle(.plain)
+                               .submitLabel(.done)
+                               .padding(.vertical, 4)
+                HStack {
+                    Text("Sua emoção predominante foi ")
+                        .font(.subheadline)
+                        .bold()
+                    + Text(emotionDetails.name.lowercased())
+                        .font(.subheadline)
+                        .bold()
+                        .foregroundStyle(emotionDetails.color)
+                    
+                    Spacer()
+                }
+                
+                Divider()
             }
+
             Text(register.content)
-                           .font(.body)
-                           .multilineTextAlignment(.leading)
-                           .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.body)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
         }
         .padding(16)
-        .navigationTitle(register.title)
     }
-}
-
-
-#Preview {
-    RegisterView(register: mockRegisters[0])
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var registers: [Register] = mockRegisters
+    @State var registers: [Register] = []
     @State var isPresented: Bool = false
     @State var showSaveAlert: Bool = false
     @State var tempTranscript: String? = nil
@@ -19,9 +19,9 @@ struct HomeView: View {
         NavigationStack{
             VStack {
                 List{
-                    ForEach(registers) { register in
+                    ForEach($registers) { $register in
                         NavigationLink {
-                            RegisterView(register: register)
+                            RegisterView(register: $register)
                         } label : {
                             HStack {
                                 VStack(alignment: .leading, spacing: 4) {
@@ -84,7 +84,9 @@ struct HomeView: View {
             }
 
             .navigationDestination(item: $selectedRegister) { register in
-                RegisterView(register: register)
+                if let idx = registers.firstIndex(where: { $0.id == register.id }) {
+                    RegisterView(register: $registers[idx])
+                }
             }
         }
     }
